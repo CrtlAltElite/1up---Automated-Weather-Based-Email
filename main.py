@@ -15,7 +15,7 @@ def read_csv(file_path):
     # Open the CSV file for reading
     with open(file_path, mode='r', newline='', encoding='utf-8') as file:
         reader = csv.DictReader(file)  # Read the file as a dictionary
-        return [row for row in reader]  # Return a list of dictionaries, each representing a row
+        return list(reader) # Return a list of dictionaries, each representing a row
 
 # Function to check if it's raining in a city
 def is_raining(city, country_code):
