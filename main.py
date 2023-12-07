@@ -24,7 +24,7 @@ def is_raining(city, country_code):
     response = requests.get(url)  # Make the API request
     data = response.json()  # Parse the response as JSON
     # Return True if any weather condition is in the range of rain codes (500-531)
-    return any(weather['id'] for weather in data['weather'] if 500 <= weather['id'] <= 531)
+    return any(weather['id'] for weather in data['weather'] if 200 <= weather['id'] <= 622)
 
 # Function to send email using SendGrid
 def send_email(receiver_email, subject, body):
