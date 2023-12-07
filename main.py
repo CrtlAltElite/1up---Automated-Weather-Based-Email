@@ -23,7 +23,8 @@ def is_raining(city, country_code):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country_code}&appid={OPEN_WEATHER_KEY}"
     response = requests.get(url)  # Make the API request
     data = response.json()  # Parse the response as JSON
-    # Return True if any weather condition is in the range of rain codes (500-531)
+    # Return True if any weather condition is in the range of rain/storm codes (200-622)
+    print(data['weather'])
     return any(weather['id'] for weather in data['weather'] if 200 <= weather['id'] <= 622)
 
 # Function to send email using SendGrid
